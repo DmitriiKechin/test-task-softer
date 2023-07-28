@@ -6,6 +6,7 @@ export const LoadingForm: FC<LoadingFormProps> = ({
   setToken,
   token,
   setFiles,
+  disabled,
 }) => {
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -47,6 +48,7 @@ export const LoadingForm: FC<LoadingFormProps> = ({
         Получить токен
       </Link>
       <Button
+        disabled={!token || disabled}
         variant="contained"
         onClick={(event) => {
           event.preventDefault();
